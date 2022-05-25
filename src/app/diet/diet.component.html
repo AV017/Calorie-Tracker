@@ -1,0 +1,78 @@
+<div class="flex space-x-4 my-7 mx-5">
+  <button
+    mat-raised-button
+    (click)="showFoodList()"
+    class="text-white text-sm bg-orange-500 font-medium"
+  >
+    Add Food
+  </button>
+  <button
+    mat-raised-button
+    class="text-white text-sm bg-blue-500 font-medium"
+    (click)="setTarget()"
+  >
+    Set Target
+  </button>
+</div>
+<div class="flex justify-between pb-3">
+  <div class="mx-4 text-2xl font-bold">Target : {{ target }}</div>
+  <div class="mx-4 text-3xl font-bold">{{ today | date: "longDate" }}</div>
+  <div class="mx-4 text-2xl font-bold">
+    Remaining Calories : {{ Remaining }}
+  </div>
+</div>
+
+<div class="mx-3" *ngIf="!emptyList; else empty">
+  <table
+    mat-table
+    class="w-full mat-elevation-z8 demo-table"
+    [dataSource]="dataSource"
+  >
+    <!-- foodName Column -->
+    <ng-container matColumnDef="FoodName">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-xl w-1/6 text-black bg-slate-200"
+      >
+        Food Name
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.FoodName }}</td>
+    </ng-container>
+
+    <!-- Calories Column -->
+    <ng-container matColumnDef="Calories">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-xl w-1/6 text-black bg-slate-200"
+      >
+        Calories
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.Calories }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Count">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        class="text-xl w-1/6 text-black bg-slate-200"
+      >
+        Count
+      </th>
+      <td mat-cell *matCellDef="let element">{{ element.Count }}</td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="Add">
+      <th mat-header-cell *matHeaderCellDef class="text-xl w-1/6 text-black bg-slate-200 rounded-r-lg">Add</th>
+      <td mat-cell *matCellDef="let element">{{element.Add}}</td>
+    </ng-container> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+
+<ng-template #empty>
+  <div class="mx-4 my-40 text-5xl font-bold text-center">No Food Selected</div>
+</ng-template>

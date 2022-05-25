@@ -1,0 +1,20 @@
+
+
+
+<mat-toolbar class="flex justify-between space-x-10 bg-gray-800">
+  <button class="text-gray-300 font-bold text-lg">
+    CALORIE TRACKER
+  </button>
+  <div class="flex">
+    <button mat-button [routerLink]="['/home']" class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold text-sm">
+      Home
+    </button>
+    <button mat-button [routerLink]="['/diet']" class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold text-sm">
+      Daily Progress
+    </button>
+    <button mat-button [routerLink]="['/about']" class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md font-bold text-sm">
+      About
+    </button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

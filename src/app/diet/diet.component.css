@@ -1,0 +1,17 @@
+.mat-row .mat-cell {
+    border-bottom: transparent;
+    border-top: transparent;
+    cursor: pointer;
+}
+
+/* .mat-row:hover .mat-cell {
+    font-size: large;
+} */
+
+/* .demo-row-is-clicked {
+    font-weight: bold;
+} */
+
+.mat-cell {
+    justify-items: center;
+}

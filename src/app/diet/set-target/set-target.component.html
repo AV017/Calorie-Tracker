@@ -1,0 +1,25 @@
+<form class="w-full items-center">
+  <mat-label
+    class="block uppercase tracking-wide text-gray-700 font-bold mb-5 text-base"
+    >Enter Daily Target Calories</mat-label
+  >
+  <div class="content-center">
+    <input
+      type="number"
+      matInput
+      id="target"
+      class="bg-gray-200 text-gray-700 border-2 rounded py-3 px-4 mb-3 focus:border-purple-500 focus:outline-none focus:bg-white"
+    />
+  </div>
+  <div class="mt-3">
+    <button
+      mat-flat-button
+      class="bg-purple-500 text-white py-2 content-center"
+      type="submit"
+      mat-dialog-close
+      (click)="setTarget()"
+    >
+      Submit
+    </button>
+  </div>
+</form>
